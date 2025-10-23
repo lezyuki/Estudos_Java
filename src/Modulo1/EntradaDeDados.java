@@ -1,5 +1,8 @@
+package Modulo1;
+
 import java.util.Scanner;
-public class Exmodulo1 {
+
+public class EntradaDeDados {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 

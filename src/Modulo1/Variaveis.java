@@ -1,3 +1,5 @@
+package Modulo1;
+
 public class Variaveis {
     public static void main(String[] args){
         int idade = 22;

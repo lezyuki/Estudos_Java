@@ -1,3 +1,5 @@
+package Modulo1;
+
 import java.util.Scanner;
 public class CalculoDeIMC {
     public static void main(String[] args) {

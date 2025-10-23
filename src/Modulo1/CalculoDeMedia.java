@@ -1,3 +1,5 @@
+package Modulo1;
+
 import java.util.Scanner;
 public class CalculoDeMedia {
     public static void main(String[] args) {
