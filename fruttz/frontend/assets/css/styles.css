@@ -1,0 +1,22 @@
+/* =========================================================
+   styles.css
+   ---------------------------------------------------------
+   Arquivo organizado (sem renomear classes/ids)
+   Arquivo principal de imports (ordem: base -> components -> ui-inline -> páginas)
+   ========================================================= */
+
+@import url(./core/base.css);
+@import url(./core/components.css);
+
+/* CSS que antes estava em JS (templates/inline) */
+@import url(./core/ui-inline.css);
+
+/* Páginas */
+@import url(./pages/menu.css);
+@import url(./pages/cart.css);
+@import url(./pages/checkout.css);
+
+/* Se você usar a página de sucesso com o mesmo bundle, descomente:
+@import url(./pages/success.css);
+*/
+

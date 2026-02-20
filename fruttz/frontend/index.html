@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#2e7d32" />
+    <meta name="description" content="Fruttz • Cardápio de sucos, açaí e saladas. Escolha seus itens e monte do seu jeito." />
+
+    <title>Fruttz • Cardápio</title>
+
+    <!-- Fontes (alegria + legibilidade) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+</head>
+
+<body>
+<!-- TOPBAR -->
+<header class="topbar">
+    <div class="topbar-inner">
+        <a class="brand" href="./index.html" aria-label="Ir para o cardápio">
+            <img class="brand-logo" src="assets/img/logo-fruttz.png" alt="Fruttz" />
+        </a>
+
+        <div class="top-actions">
+            <a class="icon-btn icon-btn-green" href="cart.html" aria-label="Abrir carrinho">
+                🛒
+                <span id="cartBadge" class="badge badge-yellow hidden" aria-label="Itens no carrinho">0</span>
+            </a>
+
+            <button
+                    id="menuBtn"
+                    type="button"
+                    class="icon-btn icon-btn-pink"
+                    aria-label="Abrir menu"
+                    aria-expanded="false"
+                    aria-controls="drawer"
+            >
+                ☰
+            </button>
+        </div>
+    </div>
+
+    <!-- DRAWER -->
+    <nav id="drawer" class="drawer" aria-hidden="true">
+        <div class="drawer-header drawer-header-fruttz">
+            <strong class="drawer-brand">
+                Menu <span class="drawer-brand-frutt">Frutt</span><span class="drawer-brand-z">z</span>
+            </strong>
+
+            <button
+                    id="closeDrawer"
+                    type="button"
+                    class="icon-btn icon-btn-outline"
+                    aria-label="Fechar menu"
+            >
+                ✕
+            </button>
+        </div>
+
+        <div class="drawer-section">
+            <p class="drawer-title">Atalhos</p>
+            <a class="drawer-link" href="./index.html">📋 Cardápio</a>
+            <a class="drawer-link" href="cart.html">🛒 Carrinho</a>
+            <a class="drawer-link" href="checkout.html">💳 Checkout</a>
+        </div>
+
+        <div class="drawer-section">
+            <p class="drawer-title">Contato</p>
+
+            <a
+                    class="drawer-link is-contact"
+                    href="https://wa.me/5511951409391"
+                    target="_blank"
+                    rel="noopener"
+            >
+                💬 WhatsApp
+            </a>
+
+            <a
+                    class="drawer-link is-contact"
+                    href="https://www.instagram.com/fruttzz/"
+                    target="_blank"
+                    rel="noopener"
+            >
+                📸 Instagram
+                <small class="drawer-link-sub">@fruttzz</small>
+            </a>
+        </div>
+
+        <div class="drawer-footer">
+            <small>Fruttz • frescor de verdade</small>
+        </div>
+    </nav>
+
+    <div id="backdrop" class="backdrop hidden" aria-hidden="true"></div>
+</header>
+
+<main class="container">
+    <!-- Banner -->
+    <section class="banner" aria-label="Apresentação do cardápio">
+        <div class="banner-accent" aria-hidden="true"></div>
+        <div class="banner-content">
+            <div class="banner-title">
+                <span class="title-plain">Cardápio</span>
+                <span class="brand-solid">Frutt<span class="brand-z">z</span></span>
+            </div>
+
+            <div class="banner-subtitle">Escolha seus itens e monte do seu jeito</div>
+
+            <div class="banner-chips" aria-label="Destaques">
+                <span class="chip-mini chip-mini-green">Feito na hora</span>
+                <span class="chip-mini chip-mini-pink">Do seu jeito</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ✅ ACOMPANHAR PEDIDO (só aparece quando tiver pedido salvo no localStorage) -->
+    <section id="followOrderWrap" class="follow-order hidden" aria-label="Acompanhar pedido">
+        <button id="btnFollowOrder" class="follow-order-btn" type="button">
+            Acompanhar pedido
+        </button>
+    </section>
+
+
+    <!-- Busca -->
+    <section class="toolbar" aria-label="Busca no cardápio">
+        <input
+                id="searchInput"
+                class="input"
+                type="search"
+                placeholder="Buscar no cardápio..."
+                aria-label="Buscar no cardápio"
+                autocomplete="off"
+                inputmode="search"
+        />
+    </section>
+
+    <!-- Filtro rápido -->
+    <section class="quick-filter" aria-label="Filtro por categoria">
+        <div class="segmented" role="tablist" aria-label="Categorias">
+            <button class="seg-btn is-all active" data-category="">
+                <span class="t1">To</span><span class="t2">do</span><span class="t3">s</span>
+            </button>
+            <button class="seg-btn" data-category="SUCO" aria-selected="false" type="button">Sucos</button>
+            <button class="seg-btn" data-category="ACAI" aria-selected="false" type="button">Açaí</button>
+            <button class="seg-btn" data-category="SALADA" aria-selected="false" type="button">Salada</button>
+        </div>
+    </section>
+
+    <!-- Produtos -->
+    <section id="products" class="grid" aria-live="polite" aria-label="Lista de produtos"></section>
+
+    <!-- Toast -->
+    <div id="toast" class="toast hidden" role="status" aria-live="polite" aria-atomic="true"></div>
+</main>
+
+<!-- MODAL -->
+<div id="modalBackdrop" class="modal-backdrop hidden" aria-hidden="true"></div>
+
+<section id="productModal" class="modal hidden" role="dialog" aria-modal="true" aria-label="Detalhes do produto">
+    <header class="modal-header">
+        <div>
+            <h3 id="modalTitle" class="modal-title">Produto</h3>
+            <p id="modalSubtitle" class="modal-subtitle">Descrição</p>
+        </div>
+
+        <button id="modalClose" class="icon-btn" type="button" aria-label="Fechar">✕</button>
+    </header>
+
+    <div class="modal-body">
+        <!-- sizeBlock e sucoBlock entram via JS aqui -->
+
+        <!-- Adicionais -->
+        <p class="modal-section-title hidden" data-role="addons-title">Adicionais</p>
+        <div class="addons hidden" data-role="addons-wrap">
+            <div id="addonsList" class="addons"></div>
+        </div>
+
+        <!-- Nutri -->
+        <div class="nutri">
+            <div class="nutri-head">
+                <strong>Tabela nutricional</strong>
+                <small id="nutriServing">Porção: -</small>
+            </div>
+            <table class="nutri-table">
+                <tbody id="nutriTableBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer class="modal-footer">
+        <div class="modal-total">
+            <span>Total</span>
+            <strong id="modalTotal">R$ 0,00</strong>
+        </div>
+
+        <div class="btn-row">
+            <button id="modalCancel" class="btn btn-secondary" type="button">Cancelar</button>
+            <button id="modalConfirm" class="btn btn-primary" type="button">Adicionar</button>
+        </div>
+    </footer>
+</section>
+
+<!-- SCRIPTS (defer = mais leve, sem travar render) -->
+
+
+
+
+<!-- ✅ MOSTRA O BOTÃO "ACOMPANHAR PEDIDO" SE EXISTIR fruttz:last_order_id -->
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/utils.js"></script>
+  <script src="assets/js/storage.js"></script>
+  <script src="assets/js/ui-templates.js"></script>
+  <script src="assets/js/drawer.js"></script>
+  <script src="assets/js/menu.js"></script>
+  <script src="assets/js/follow-order.js"></script>
+
+</body>
+</html>

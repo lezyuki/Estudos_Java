@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#2e7d32" />
+    <meta name="description" content="Fruttz • Carrinho. Revise seus itens antes de finalizar." />
+
+    <title>Fruttz • Carrinho</title>
+
+    <!-- Fontes (alegria + legibilidade) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+</head>
+
+<body class="page-cart">
+<header class="topbar">
+    <div class="topbar-inner">
+        <a class="brand" href="index.html" aria-label="Voltar para o cardápio">
+            <img class="brand-logo" src="assets/img/logo-fruttz.png" alt="Fruttz" />
+        </a>
+
+        <div class="top-actions">
+            <a class="icon-btn icon-btn-green" href="./cart.html" aria-label="Abrir carrinho">
+                🛒
+                <span id="cartBadge" class="badge badge-yellow hidden" aria-label="Itens no carrinho">0</span>
+            </a>
+
+            <button
+                    id="menuBtn"
+                    type="button"
+                    class="icon-btn icon-btn-pink"
+                    aria-label="Abrir menu"
+                    aria-expanded="false"
+                    aria-controls="drawer"
+            >
+                ☰
+            </button>
+        </div>
+    </div>
+
+    <!-- DRAWER -->
+    <nav id="drawer" class="drawer" aria-hidden="true">
+        <div class="drawer-header drawer-header-fruttz">
+            <strong class="drawer-brand">
+                Menu <span class="drawer-brand-frutt">Frutt</span><span class="drawer-brand-z">z</span>
+            </strong>
+
+            <button
+                    id="closeDrawer"
+                    type="button"
+                    class="icon-btn icon-btn-outline"
+                    aria-label="Fechar menu"
+            >
+                ✕
+            </button>
+        </div>
+
+        <div class="drawer-section">
+            <p class="drawer-title">Atalhos</p>
+            <a class="drawer-link" href="index.html">📋 Cardápio</a>
+            <a class="drawer-link" href="./cart.html">🛒 Carrinho</a>
+            <a class="drawer-link" href="checkout.html">💳 Checkout</a>
+        </div>
+
+        <div class="drawer-section">
+            <p class="drawer-title">Contato</p>
+
+            <a
+                    class="drawer-link is-contact"
+                    href="https://wa.me/5511951409391"
+                    target="_blank"
+                    rel="noopener"
+            >
+                💬 WhatsApp
+            </a>
+
+            <a
+                    class="drawer-link is-contact"
+                    href="https://www.instagram.com/fruttzz/"
+                    target="_blank"
+                    rel="noopener"
+            >
+                📸 Instagram
+                <small class="drawer-link-sub">@fruttzz</small>
+            </a>
+        </div>
+
+        <div class="drawer-footer">
+            <small>Fruttz • frescor de verdade</small>
+        </div>
+    </nav>
+
+    <div id="backdrop" class="backdrop hidden" aria-hidden="true"></div>
+</header>
+
+<main class="container">
+    <section class="banner" aria-label="Resumo do carrinho">
+        <div class="banner-accent" aria-hidden="true"></div>
+        <div class="banner-content">
+            <div class="banner-title">
+                <span class="title-plain">Seu</span>
+                <span class="brand-solid">Carrinh<span class="brand-z">o</span></span>
+            </div>
+            <div class="banner-subtitle">Revise seus itens antes de finalizar</div>
+        </div>
+    </section>
+
+    <!-- Estado vazio -->
+    <section id="cartEmpty" class="card cart-empty" aria-label="Carrinho vazio">
+        <div class="cart-empty-body">
+            <h3 class="cart-empty-title">Carrinho vazio</h3>
+            <p class="cart-empty-text">
+                Adicione seus itens no cardápio e eles vão aparecer aqui.
+            </p>
+
+            <div class="cart-empty-cta">
+                <a class="btn btn-primary" href="index.html">Ver cardápio</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Itens -->
+    <section id="cartList" class="grid hidden" aria-live="polite" aria-label="Itens do carrinho"></section>
+
+    <!-- Resumo -->
+    <section class="card cart-summary" aria-label="Total e ações do carrinho">
+        <div class="cart-summary-inner">
+            <div class="cart-summary-row">
+                <strong class="cart-summary-label">Total do pedido</strong>
+                <strong id="cartTotal" class="cart-summary-total">R$ 0,00</strong>
+            </div>
+
+            <div class="cart-summary-actions">
+                <button id="btnClearCart" class="btn" type="button">Limpar carrinho</button>
+
+                <a id="btnCheckout" class="btn btn-primary" href="checkout.html">
+                    Finalizar pedido
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div id="toast" class="toast hidden" role="status" aria-live="polite" aria-atomic="true"></div>
+</main>
+
+<!-- SCRIPTS -->
+
+
+
+
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/utils.js"></script>
+  <script src="assets/js/storage.js"></script>
+  <script src="assets/js/ui-templates.js"></script>
+  <script src="assets/js/drawer.js"></script>
+  <script src="assets/js/cart.js"></script>
+
+</body>
+</html>

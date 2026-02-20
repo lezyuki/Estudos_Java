@@ -1,0 +1,144 @@
+[
+  {
+    "sku": "SUCO-LARANJA",
+    "category": "SUCO",
+    "line": "TRADICIONAL",
+    "name": "Suco de Laranja",
+    "desc": "Laranjas selecionadas, batido na hora e servido bem gelado.",
+    "sizes": ["300", "500"],
+    "tags": ["Tradicional"]
+  },
+  {
+    "sku": "SUCO-LARANJA-ACEROLA",
+    "category": "SUCO",
+    "line": "TRADICIONAL",
+    "name": "Laranja com Acerola",
+    "desc": "Combinação clássica, refrescante e com sabor equilibrado.",
+    "sizes": ["300", "500"],
+    "tags": ["Tradicional"]
+  },
+  {
+    "sku": "SUCO-LARANJA-LIMAO",
+    "category": "SUCO",
+    "line": "TRADICIONAL",
+    "name": "Laranja com Limão",
+    "desc": "Cítrico na medida, perfeito pra refrescar no dia a dia.",
+    "sizes": ["300", "500"],
+    "tags": ["Tradicional"]
+  },
+  {
+    "sku": "SUCO-ABACAXI",
+    "category": "SUCO",
+    "line": "TRADICIONAL",
+    "name": "Suco de Abacaxi",
+    "desc": "Abacaxi maduro e bem gelado, com sabor leve e natural.",
+    "sizes": ["300", "500"],
+    "tags": ["Tradicional"]
+  },
+  {
+    "sku": "SUCO-ABACAXI-HORTELA",
+    "category": "SUCO",
+    "line": "TRADICIONAL",
+    "name": "Abacaxi com Hortelã",
+    "desc": "Refrescante e aromático. Um clássico pra qualquer hora.",
+    "sizes": ["300", "500"],
+    "tags": ["Tradicional"]
+  },
+  {
+    "sku": "SUCO-GOIABA",
+    "category": "SUCO",
+    "line": "TRADICIONAL",
+    "name": "Suco de Goiaba",
+    "desc": "Goiaba gelada e cremosa. Puro sabor!",
+    "sizes": ["300", "500"],
+    "tags": ["Tradicional"]
+  },
+  {
+    "sku": "SUCO-ABACAXI-LIMAO",
+    "category": "SUCO",
+    "line": "ESPECIAL",
+    "name": "Abacaxi com Limão",
+    "desc": "Clássico azedinho, com equilíbrio e frescor.",
+    "sizes": ["300", "500"],
+    "tags": ["Especial"]
+  },
+  {
+    "sku": "SUCO-ACEROLA-MORANGO-LARANJA",
+    "category": "SUCO",
+    "line": "ESPECIAL",
+    "name": "Acerola com Morango e Laranja",
+    "desc": "Sabor frutado e equilibrado, feito na hora.",
+    "sizes": ["300", "500"],
+    "tags": ["Especial"]
+  },
+  {
+    "sku": "SUCO-GOIABA-LIMAO",
+    "category": "SUCO",
+    "line": "ESPECIAL",
+    "name": "Goiaba com Limão",
+    "desc": "A doçura da goiaba com um toque cítrico no final.",
+    "sizes": ["300", "500"],
+    "tags": ["Especial"]
+  },
+  {
+    "sku": "SUCO-MELAO-MACA-MORANGO",
+    "category": "SUCO",
+    "line": "ESPECIAL",
+    "name": "Melão com Maçã e Morango",
+    "desc": "Leve e bem refrescante, ideal pra qualquer hora.",
+    "sizes": ["300", "500"],
+    "tags": ["Especial"]
+  },
+  {
+    "sku": "SUCO-MELAO-PESSEGO-LIMAO",
+    "category": "SUCO",
+    "line": "ESPECIAL",
+    "name": "Melão com Pêssego e Limão",
+    "desc": "Frutado e cítrico, com final bem gelado.",
+    "sizes": ["300", "500"],
+    "tags": ["Especial"]
+  },
+  {
+    "sku": "SUCO-DESINTOXICANTE",
+    "category": "SUCO",
+    "line": "FUNCIONAL",
+    "name": "Desintoxicante",
+    "desc": "Abacaxi + gengibre + limão + água. Leve e refrescante.",
+    "sizes": ["300", "500"],
+    "tags": ["Funcional"]
+  },
+  {
+    "sku": "SUCO-PELE-FIRME",
+    "category": "SUCO",
+    "line": "FUNCIONAL",
+    "name": "Pele firme",
+    "desc": "Beterraba + cenoura + laranja. Sabor suave e natural.",
+    "sizes": ["300", "500"],
+    "tags": ["Funcional"]
+  },
+  {
+    "sku": "SALADA-FRUTAS",
+    "category": "SALADA",
+    "name": "Salada de Frutas",
+    "desc": "Banana, mamão, manga, maçã, melão e abacaxi. Fresca e feita na hora.",
+    "sizes": ["300", "500"],
+    "tags": ["Frutas", "Natural"]
+  },
+  {
+    "sku": "ACAI-SIMPLES",
+    "category": "ACAI",
+    "name": "Açaí",
+    "desc": "Açaí cremoso e gelado, perfeito para montar do seu jeito.",
+    "sizes": ["300", "400", "500"],
+    "tags": ["Copo"]
+  },
+  {
+    "sku": "EM-BREVE",
+    "category": "SUCO",
+    "line": "TRADICIONAL",
+    "name": "MAIS OPÇÕES EM BREVE…",
+    "desc": "NOVIDADES CHEGANDO NA FRUTTZ!",
+    "sizes": ["300"],
+    "tags": ["Em breve"]
+  }
+]

@@ -1,0 +1,9 @@
+/* =========================================================
+   styles-comanda.css
+   ---------------------------------------------------------
+   Arquivo organizado (sem renomear classes/ids)
+   Bundle apenas para o painel comanda.html
+   ========================================================= */
+
+@import url(./core/base.css);
+@import url(./admin/comanda.css);

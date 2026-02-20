@@ -1,0 +1,9 @@
+/* =========================================================
+   styles-success.css
+   ---------------------------------------------------------
+   Arquivo organizado (sem renomear classes/ids)
+   Bundle apenas para a página success.html
+   ========================================================= */
+
+@import url(./core/base.css);
+@import url(./pages/success.css);

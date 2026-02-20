@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#2e7d32" />
+    <meta name="description" content="Fruttz • Checkout. Informe seus dados e calcule o frete pelo CEP." />
+
+    <title>Fruttz • Checkout</title>
+
+    <!-- Fontes (alegria + legibilidade) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+</head>
+
+<body class="page-checkout">
+<header class="topbar">
+    <div class="topbar-inner">
+        <a class="brand" href="index.html" aria-label="Voltar para o cardápio">
+            <img class="brand-logo" src="assets/img/logo-fruttz.png" alt="Fruttz" />
+        </a>
+
+        <div class="top-actions">
+            <a class="icon-btn icon-btn-green" href="cart.html" aria-label="Abrir carrinho">
+                🛒
+                <span id="cartBadge" class="badge badge-yellow hidden" aria-label="Itens no carrinho">0</span>
+            </a>
+
+            <!-- ✅ Botão do menu (drawer) -->
+            <button
+                    id="menuBtn"
+                    class="icon-btn icon-btn-pink"
+                    type="button"
+                    aria-label="Abrir menu"
+                    aria-expanded="false"
+            >
+                ☰
+            </button>
+        </div>
+    </div>
+</header>
+
+<main class="container">
+    <section class="banner" aria-label="Checkout">
+        <div class="banner-accent" aria-hidden="true"></div>
+        <div class="banner-content">
+            <div class="banner-title">
+                <span class="title-plain">Checkout</span>
+                <span class="brand-solid">Frutt<span class="brand-z">z</span></span>
+            </div>
+            <div class="banner-subtitle">Informe seus dados e calcule o frete pelo CEP</div>
+        </div>
+    </section>
+
+    <!-- Se carrinho vazio -->
+    <section id="checkoutEmpty" class="card checkout-empty hidden" aria-label="Carrinho vazio">
+        <div class="checkout-empty-body">
+            <h3 class="checkout-empty-title">Seu carrinho está vazio</h3>
+            <p class="checkout-empty-text">
+                Volte ao cardápio e adicione seus itens.
+            </p>
+
+            <div class="checkout-empty-cta">
+                <a class="btn btn-primary" href="index.html">Ver cardápio</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form -->
+    <section id="checkoutFormWrap" class="card checkout-wrap" aria-label="Dados para entrega">
+        <div class="checkout-inner">
+            <div class="checkout-head">
+                <h3 class="checkout-title">Dados para entrega</h3>
+                <p class="checkout-subtitle">
+                    O endereço é preenchido pelo CEP e o frete é calculado automaticamente.
+                </p>
+            </div>
+
+            <div class="checkout-fields">
+                <input id="custName" class="input" type="text" placeholder="Nome completo" autocomplete="name" />
+                <input id="custPhone" class="input" type="tel" placeholder="Telefone (DDD + número)" inputmode="tel" autocomplete="tel" />
+                <input id="custCep" class="input" type="text" placeholder="CEP" inputmode="numeric" autocomplete="postal-code" />
+                <input id="custStreet" class="input" type="text" placeholder="Rua" autocomplete="street-address" />
+
+                <div class="checkout-row">
+                    <input id="custNumber" class="input" type="text" placeholder="Número" autocomplete="address-line2" />
+                    <input id="custComplement" class="input" type="text" placeholder="Complemento (opcional)" autocomplete="address-line3" />
+                </div>
+
+                <div class="checkout-row">
+                    <input id="custNeighborhood" class="input" type="text" placeholder="Bairro" autocomplete="address-level3" />
+                    <input id="custCity" class="input" type="text" placeholder="Cidade" autocomplete="address-level2" />
+                </div>
+
+                <input id="custState" class="input" type="text" placeholder="UF" autocomplete="address-level1" />
+            </div>
+
+            <!-- Resumo -->
+            <section class="card checkout-summary" aria-label="Resumo do pedido">
+                <div class="checkout-summary-inner">
+                    <strong class="checkout-summary-title">Resumo</strong>
+
+                    <div class="checkout-line">
+                        <span class="checkout-line-label">Subtotal</span>
+                        <strong id="sumSubtotal">R$ 0,00</strong>
+                    </div>
+
+                    <div class="checkout-line">
+                        <span class="checkout-line-label">Frete</span>
+                        <strong id="sumDelivery">—</strong>
+                    </div>
+
+                    <div class="checkout-line checkout-line-total">
+                        <span class="checkout-line-total-label">Total</span>
+                        <strong id="sumTotal" class="checkout-total">R$ 0,00</strong>
+                    </div>
+
+                    <button id="btnCalcDelivery" class="btn btn-secondary" type="button">
+                        Calcular frete pelo CEP
+                    </button>
+
+                    <button id="btnPay" class="btn btn-primary" type="button">
+                        Pagar (Pix / Cartão)
+                    </button>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <div id="toast" class="toast hidden" role="status" aria-live="polite" aria-atomic="true"></div>
+</main>
+
+<!-- ✅ Backdrop do drawer (usa classe hidden, não atributo hidden) -->
+<div id="backdrop" class="backdrop hidden"></div>
+
+<!-- ✅ DRAWER -->
+<nav id="drawer" class="drawer" aria-hidden="true">
+    <div class="drawer-header">
+        <strong class="drawer-brand">
+            Menu <span class="drawer-brand-frutt">Frutt</span><span class="drawer-brand-z">z</span>
+        </strong>
+
+        <button
+                id="closeDrawer"
+                type="button"
+                class="icon-btn icon-btn-outline"
+                aria-label="Fechar menu"
+        >
+            ✕
+        </button>
+    </div>
+
+    <div class="drawer-section">
+        <p class="drawer-title">Atalhos</p>
+        <a class="drawer-link" href="index.html">📋 Cardápio</a>
+        <a class="drawer-link" href="cart.html">🛒 Carrinho</a>
+        <a class="drawer-link" href="./checkout.html">💳 Checkout</a>
+    </div>
+
+    <div class="drawer-section">
+        <p class="drawer-title">Contato</p>
+
+        <a
+                class="drawer-link is-contact"
+                href="https://wa.me/5511951409391"
+                target="_blank"
+                rel="noopener"
+        >
+            💬 WhatsApp
+        </a>
+
+        <a
+                class="drawer-link is-contact"
+                href="https://www.instagram.com/fruttzz/"
+                target="_blank"
+                rel="noopener"
+        >
+            📸 Instagram
+            <small class="drawer-link-sub">@fruttzz</small>
+        </a>
+    </div>
+
+    <div class="drawer-footer">
+        <small>Fruttz • frescor de verdade</small>
+    </div>
+</nav>
+
+<!-- SCRIPTS -->
+
+
+
+
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/utils.js"></script>
+  <script src="assets/js/storage.js"></script>
+  <script src="assets/js/ui-templates.js"></script>
+  <script src="assets/js/drawer.js"></script>
+  <script src="assets/js/checkout.js"></script>
+
+</body>
+</html>

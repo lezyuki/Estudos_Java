@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fruttz • Acompanhar pedido</title>
+
+    <!-- Fontes (alegria + legibilidade) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" href="assets/css/styles-success.css" />
+</head>
+
+<body>
+<main class="page">
+    <section class="success-card">
+        <div class="top-mini">
+            <img class="logo-mini" src="./assets/logo.png" alt="Fruttz" onerror="this.style.display='none'">
+            <a class="link-mini" href="index.html">Voltar</a>
+        </div>
+
+        <div class="row">
+            <div>
+                <h1 class="title">Acompanhar pedido</h1>
+                <p class="subtitle" id="subtitle">
+                    Assim que avançar, atualizamos aqui automaticamente.
+                </p>
+            </div>
+
+            <!-- ✅ agora é “PAGO” no Brasil -->
+            <div class="pill ok" id="statusPill">—</div>
+        </div>
+
+        <!-- ✅ TIMELINE -->
+        <div class="track">
+            <div class="track-step" id="st1">
+                <div class="dot"></div>
+                <div class="track-text">
+                    <strong>Pedido recebido</strong>
+                    <small>Aguardando confirmação</small>
+                </div>
+            </div>
+
+            <div class="track-step" id="st2">
+                <div class="dot"></div>
+                <div class="track-text">
+                    <strong>Pagamento aprovado</strong>
+                    <small>Pedido confirmado</small>
+                </div>
+            </div>
+
+            <div class="track-step" id="st3">
+                <div class="dot"></div>
+                <div class="track-text">
+                    <strong>Em preparo</strong>
+                    <small>Estamos preparando seu pedido</small>
+                </div>
+            </div>
+
+            <div class="track-step" id="st4">
+                <div class="dot"></div>
+                <div class="track-text">
+                    <strong>Saiu para entrega</strong>
+                    <small>O entregador está a caminho</small>
+                </div>
+            </div>
+
+            <div class="track-step" id="st5">
+                <div class="dot"></div>
+                <div class="track-text">
+                    <strong>Entregue</strong>
+                    <small>Bom apetite 😋</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="kv">
+            <div class="kv-row">
+                <span>Pedido</span>
+                <div class="mono" id="orderId">—</div>
+            </div>
+
+            <div class="kv-row">
+                <span>TXID</span>
+                <div class="mono" id="txid">—</div>
+            </div>
+
+            <!-- ✅ opcional: total e endereço (aparece se o backend devolver) -->
+            <div class="kv-row" id="kvTotalRow" style="display:none;">
+                <span>Total</span>
+                <div class="mono" id="total">—</div>
+            </div>
+
+            <div class="kv-row" id="kvAddrRow" style="display:none;">
+                <span>Entrega</span>
+                <div class="mono" id="addr">—</div>
+            </div>
+        </div>
+
+        <!-- ✅ SÓ 2 BOTÕES -->
+        <div class="actions actions-2">
+            <button class="btn-like btn-green" id="btnBack" type="button">Voltar ao cardápio</button>
+            <button class="btn-like btn-ghost" id="btnRefresh" type="button">Atualizar agora</button>
+        </div>
+
+    </section>
+</main>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/utils.js"></script>
+<script src="assets/js/storage.js"></script>
+<script src="assets/js/success.js"></script>
+</body>
+</html>

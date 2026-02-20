@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fruttz • Painel da Loja</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" href="assets/css/styles-comanda.css" />
+
+</head>
+
+<body>
+<main class="page">
+    <section class="panel-card">
+        <div class="top-mini">
+            <img class="logo-mini" src="./assets/logo.png" alt="Fruttz" onerror="this.style.display='none'">
+        </div>
+
+        <div class="panel-head">
+            <div>
+                <h1 class="title">Painel da Loja</h1>
+                <p class="subtitle" id="subtitle">Atualizando automaticamente a cada 2s.</p>
+            </div>
+
+            <div class="panel-actions">
+                <button class="btn-like btn-ghost" id="btnRefresh" type="button">Atualizar</button>
+                <button class="btn-like btn-green" id="btnOpenKitchen" type="button" title="Atalho">Cozinha</button>
+            </div>
+        </div>
+
+        <div class="filters">
+            <button class="chip is-on" data-filter="ALL" type="button">Todos</button>
+            <button class="chip" data-filter="WAITING_PAYMENT" type="button">Aguardando</button>
+            <button class="chip" data-filter="PAID" type="button">Pago</button>
+            <button class="chip" data-filter="PREPARING" type="button">Em preparo</button>
+            <button class="chip" data-filter="OUT_FOR_DELIVERY" type="button">Em entrega</button>
+            <button class="chip" data-filter="DELIVERED" type="button">Entregue</button>
+        </div>
+
+        <div class="panel-meta">
+            <div class="mono" id="metaCounts">—</div>
+            <div class="mono" id="metaLast">—</div>
+        </div>
+
+        <div id="ordersList" class="orders"></div>
+
+        <div class="empty" id="emptyState" style="display:none;">
+            <strong>Nenhum pedido ainda</strong>
+            <small>Assim que entrar um pedido, ele aparece aqui.</small>
+        </div>
+    </section>
+</main>
+<script src="assets/js/config.js" defer ></script>
+<script src="assets/js/ui-templates.js" defer ></script>
+<script src="assets/js/comanda.js" defer ></script>
+
+</body>
+</html>
